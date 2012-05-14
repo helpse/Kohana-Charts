@@ -4,14 +4,14 @@
 
 ## Настройка
 
-Модуль необходимо подключить в `bootstrap.php`
+#### Модуль необходимо подключить в `bootstrap.php`
 
 	...
 	'chart'	=> MODPATH.'chart', // Chart class
 	...
 
 
-Конфиг файл: `config/chart.php`
+#### Конфиг файл: `config/chart.php`
 
 	'javascripts' => array( // Пути до javascript файлов библиотеки
 		'modules/chart/vendors/amcharts/raphael.js',
@@ -37,12 +37,13 @@
 		'width' => '100px', // Ширина блока для графика
 		'height' => '300px' // Высота блока для графика
 	); ?>
+
 	
 Модели храняться в папке `/classes/chart/model/`. 
 
 	Chart::factory('test') - /classes/chart/model/test.php
-
 	Chart::factory('news/stat') - /classes/chart/model/news/stat.php
+
 	
 ### Пример модели
 
@@ -107,6 +108,7 @@
 			$this->_chart = $chart->render();
 		}
 	}
+
 
 Названия параметров аналогичны тем, что в документации:
 http://blog.amcharts.com/2011/03/amcharts-javascript-tutorials-part-1.html
