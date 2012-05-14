@@ -10,6 +10,7 @@
 	'chart'	=> MODPATH.'chart', // Chart class
 	...
 
+
 Конфиг файл: `config/chart.php`
 
 	'javascripts' => array( // Пути до javascript файлов библиотеки
@@ -23,6 +24,7 @@
 	'class' => '', // Классы добавляемые для блока
 	'cache' => TRUE,
 	'cache_lifetime' => '600'
+
 
 ## Пример использования
 
