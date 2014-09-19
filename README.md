@@ -1,5 +1,7 @@
 # Kohana Charts
 
+Modified by Sergio Melendez for Kohana 3.3
+
 Модуль для построния графиков (HTML5 charts), основан на http://www.amcharts.com/
 
 ## Настройка

@@ -18,7 +18,7 @@ class Chart {
 		
 		if(Chart::$init === TRUE)
 		{
-			$javascripts = Kohana::config('chart')->javascripts;
+			$javascripts = Kohana::$config->load('chart')->javascripts;
 			foreach ($javascripts as $script) {
 				$js .= "\t".Html::script($script)."\n";
 			}
@@ -54,7 +54,7 @@ class Chart {
 			Chart::$init = TRUE;
 		}
 		
-		$config_file = Kohana::config('chart')->as_array();
+		$config_file = Kohana::$config->load('chart')->as_array();
 		$this->_config = Arr::merge($this->_config, $config_file);
 		
 		if(is_array($config))
@@ -154,6 +154,22 @@ class Chart {
 	
 	public function __toString()
 	{
-		return $this->render();
+		//return $this->render();
+		try
+		{
+			return $this->render();
+		}
+		catch (Exception $e)
+		{
+			/**
+			 * Display the exception message.
+			 *
+			 * We use this method here because it's impossible to throw an
+			 * exception from __toString().
+			 */
+			$error_response = Kohana_Exception::_handler($e);
+
+			return $error_response->body();
+		}
 	}
 }
